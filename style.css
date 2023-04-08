@@ -1,0 +1,85 @@
+/* board display and alignment */
+#game-board {
+	width: 300px;
+	height: 450px;
+	margin: 5% auto 0 auto;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* header style */
+h1 {
+    text-align: center;
+	font-size: 4rem;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+/* set shape and size of each cell in the board */
+.cell {
+	height: 70px;
+    width: 70px;
+    box-sizing: border-box;
+	margin: 2px;
+	background-color: #ffffff;
+    border: 2px solid black;
+	border-top: 0;
+	cursor: pointer;
+	transition: background-color .3s ease-in-out;
+}
+
+.cell:hover {
+	background-color: #4aa6e8;
+}
+/* set player 1 to be X */
+.Player1 {
+	background-image: url(images/X.jpg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* set player 2 to be O */
+.Player2 {
+	background-image: url(images/O.jpg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+/* set message display to none until gameover */
+#message {
+	display: none;
+	font-size: 3rem;
+	color: purple;
+	text-align: center;
+	margin-top: 10%;
+	font-weight: bolder;
+}
+
+/* set reset button display to none until gameover */
+#reset-button {
+	display: none;
+	text-align: center;
+	margin: 3% auto;
+	background-color: orange;
+	padding: 1%;
+	border-radius: 3rem;
+	color: white;
+	font-size: 1.5rem;font-weight: bold;
+}
+
+/* fall animation */
+.cell.fall {
+	animation: fall 0.5s forwards;
+  }
+  
+  @keyframes fall {
+	from {
+	  transform: translateY(-100%);
+	}
+	to {
+	  transform: translateY(0);
+	}
+  }
